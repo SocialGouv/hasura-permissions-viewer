@@ -1,6 +1,6 @@
 # hasura-permissions-viewer
 
-Generate hasura table permissions to human-friendly HTML
+Generate human-friendly HTML table from hasura permissions list
 
 ## Usage
 
@@ -11,6 +11,6 @@ const toHtml = require("@socialgouv/hasura-permissions-viewer");
 
 const permissions = require("./permissions.json");
 
+// to get the formatted HTML table
 console.log(toHtml(permissions));
 ```
-

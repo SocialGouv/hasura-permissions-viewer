@@ -1,0 +1,111 @@
+<title>Hasura permissions viewer demo</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://unpkg.com/@socialgouv/hasura-permissions-viewer@1.0.0/src/index.js"></script>
+<script>
+  function update() {
+    console.log('io')
+    document.getElementById("result").innerHTML = toHtml(JSON.parse(document.getElementById("source").value))
+  }
+</script>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Hasura permissions viewer</h1>
+      <p class="lead">Generate human-friendly HTML table from hasura permissions list. </p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/socialgouv/hasura-permissions-viewer" role="button">Github project</a>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="text-center">hasura permissions</div>
+        <textarea id="source" style="width:100%;height:800px;white-space:pre-wrap;font-size:10px;font-family:courier" onKeyUp="update()">
+{
+  "version": 2,
+  "tables": [
+    {
+      "table": {
+        "schema": "public",
+        "name": "table1"
+      },
+      "select_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "description"],
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "table2"
+      },
+      "insert_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "check": {},
+            "columns": ["id", "title", "statut", "url"]
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "anonymous",
+          "permission": {
+            "columns": ["id", "title", "statut"],
+            "filter": {
+              "statut": {
+                "_eq": "Public"
+              }
+            }
+          }
+        },
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "statut", "url"]
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "url"],
+            "filter": {}
+          }
+        },
+        {
+          "role": "anonymous",
+          "permission": {
+            "columns": [],
+            "filter": {}
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "url"],
+            "filter": {}
+          }
+        }
+      ]
+    }
+  ]
+}
+        </textarea>
+      </div>
+      <div class="col">
+        <div class="text-center">HTML result</div>
+         <div id="result"><div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  update()
+</script>
