@@ -1,0 +1,22 @@
+{
+  "name": "@socialgouv/hasura-permissions-viewer",
+  "description": "convert hasura permissions definition to readable HTML",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@socialgouv/eslint-config-recommended": "^0.20.0",
+    "eslint": "^6.8.0",
+    "jest-cli": "^25.5.1",
+    "prettier": "^2.0.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@socialgouv/eslint-config-recommended"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "test": "jest"
+  }
+}

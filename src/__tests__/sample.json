@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "tables": [
+    {
+      "table": {
+        "schema": "audit",
+        "name": "logged_actions"
+      }
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "table1"
+      },
+      "select_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "description"],
+            "filter": {}
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "schema": "public",
+        "name": "table2"
+      },
+      "insert_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "check": {},
+            "columns": ["id", "title", "statut", "url"]
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "anonymous",
+          "permission": {
+            "columns": ["id", "title", "statut"],
+            "filter": {
+              "statut": {
+                "_eq": "Public"
+              }
+            }
+          }
+        },
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "statut", "url"]
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "url"],
+            "filter": {}
+          }
+        },
+        {
+          "role": "anonymous",
+          "permission": {
+            "columns": [],
+            "filter": {}
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user1",
+          "permission": {
+            "columns": ["id", "title", "url"],
+            "filter": {}
+          }
+        }
+      ]
+    }
+  ]
+}

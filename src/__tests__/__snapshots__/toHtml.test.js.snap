@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should convert permissions to HTML 1`] = `
+"
+    <title>Hasura permissions</title>
+    <link rel=\\"stylesheet\\" href=\\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\\" integrity=\\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\\" crossorigin=\\"anonymous\\">
+    <body>
+      <div class=\\"container\\">
+      
+    <table class=\\"table table-stripped\\">
+      <thead class=\\"thead-dark\\">
+        <tr>
+          <th class=\\"thead-dark\\" colspan=\\"2\\">
+            <h3>table1</h3>
+          </th>
+        </tr>
+        <tr>
+          <th scope=\\"col\\">Field</th>
+          <th class=\\"text-center\\" scope=\\"col\\">user1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>description</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+          </tr>
+<tr>
+            <td>id</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+          </tr>
+<tr>
+            <td>title</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+          </tr>
+      </tbody>
+    </table>
+
+    <table class=\\"table table-stripped\\">
+      <thead class=\\"thead-dark\\">
+        <tr>
+          <th class=\\"thead-dark\\" colspan=\\"3\\">
+            <h3>table2</h3>
+          </th>
+        </tr>
+        <tr>
+          <th scope=\\"col\\">Field</th>
+          <th class=\\"text-center\\" scope=\\"col\\">anonymous</th>
+<th class=\\"text-center\\" scope=\\"col\\">user1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>id</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+          </tr>
+<tr>
+            <td>statut</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+          </tr>
+<tr>
+            <td>title</td>
+            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+          </tr>
+<tr>
+            <td>url</td>
+            <td class=\\"text-center\\" key={role}></td>
+<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+          </tr>
+      </tbody>
+    </table>
+      </div>
+    </body>
+  "
+`;
