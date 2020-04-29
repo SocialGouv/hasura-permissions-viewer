@@ -149,18 +149,10 @@ const toHtml = (permissions) => {
     table.update_permissions ||
     table.insert_permissions ||
     table.delete_permissions;
-  const html = `
-    <title>Hasura permissions</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <body>
-      <div class="container">
-      ${permissions.tables
-        .filter(hasPermissions)
-        .map(getTablePermissionsHtml)
-        .join("\n")}
-      </div>
-    </body>
-  `;
+  const html = permissions.tables
+    .filter(hasPermissions)
+    .map(getTablePermissionsHtml)
+    .join("\n");
   return html;
 };
 
