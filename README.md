@@ -1,4 +1,4 @@
-# hasura-permissions-viewer
+# hasura-permissions-viewer [![](https://img.shields.io/npm/v/@socialgouv/hasura-permissions-viewer)](https://www.npmjs.com/package/@socialgouv/hasura-permissions-viewer)
 
 Generate human-friendly HTML table from hasura permissions list
 
