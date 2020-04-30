@@ -455,7 +455,7 @@
   dependencies:
     type-detect "4.0.8"
 
-"@socialgouv/eslint-config-recommended@^0.20.0":
+"@socialgouv/eslint-config-recommended@0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@socialgouv/eslint-config-recommended/-/eslint-config-recommended-0.20.0.tgz#a0df29a4cf6e6a5f1d73f440388b9baeb796f0a5"
   integrity sha512-uisvQu4vQeXhydMSW1iUs5e/82xTYdxMgo4iiUpEoUgMd2X49N4N6xmYD/3tzVrCr4IFnBk4lzTkaQj6enSPHw==
@@ -1396,7 +1396,7 @@ eslint-visitor-keys@^1.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@^6.8.0:
+eslint@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
@@ -2236,7 +2236,7 @@ jest-changed-files@^25.5.0:
     execa "^3.2.0"
     throat "^5.0.0"
 
-jest-cli@^25.5.1:
+jest-cli@25.5.1:
   version "25.5.1"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-25.5.1.tgz#6708b213920c305f7f533367a39c0ecbc42bde41"
   integrity sha512-zXbztzrZEPnqHNHr4A/PELE+fZDB8zcWfNKV11YDzXphkaSztjsX2cFtkx5bcW3Ya23JRzUw6KcaIgccLXAnSg==
@@ -3245,7 +3245,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.0.5:
+prettier@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
   integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
