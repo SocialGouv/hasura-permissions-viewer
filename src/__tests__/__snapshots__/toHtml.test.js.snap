@@ -56,7 +56,8 @@ exports[`Should convert permissions to HTML 1`] = `
             <td>statut</td>
             <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
 <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
           </tr>
 <tr>
             <td>title</td>
