@@ -54,13 +54,22 @@ const getTableFields = ({
   ]).sort();
 
 // get permission details for a given role/field/operation
-const getFieldPermission = (permissions, role, field) => {
+const getFieldPermission = (action, permissions, role, field) => {
   if (!permissions) return null;
   const rolePermissions = permissions.find((perm) => perm.role === role);
-  const allowed =
+  let allowed =
     rolePermissions &&
     rolePermissions.permission.columns &&
-    rolePermissions.permission.columns.includes(field);
+    (rolePermissions.permission.columns === "*" ||
+      rolePermissions.permission.columns.includes(field));
+  if (
+    rolePermissions &&
+    rolePermissions.permission.filter &&
+    !allowed &&
+    action === "delete"
+  ) {
+    allowed = true;
+  }
   const filter =
     allowed &&
     humanFilter(
@@ -84,10 +93,10 @@ const getRolePermissions = (
   field
 ) => {
   const perms = {
-    C: getFieldPermission(insert_permissions, role, field),
-    R: getFieldPermission(select_permissions, role, field),
-    U: getFieldPermission(update_permissions, role, field),
-    D: getFieldPermission(delete_permissions, role, field),
+    C: getFieldPermission("insert", insert_permissions, role, field),
+    R: getFieldPermission("select", select_permissions, role, field),
+    U: getFieldPermission("update", update_permissions, role, field),
+    D: getFieldPermission("delete", delete_permissions, role, field),
   };
   return perms;
 };
