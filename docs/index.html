@@ -1,6 +1,6 @@
 <title>Hasura permissions viewer demo</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://unpkg.com/@socialgouv/hasura-permissions-viewer@1.0.0/src/index.js"></script>
+<script src="https://unpkg.com/@socialgouv/hasura-permissions-viewer/src/index.js"></script>
 <script>
   function update() {
     console.log('io')
@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="text-center">hasura permissions</div>
+        <div class="text-center">hasura permissions as JSON (<a href="https://transform.tools/yaml-to-json" target="_blank">YAML->JSON</a>)</div>
         <textarea id="source" style="width:100%;height:800px;white-space:pre-wrap;font-size:10px;font-family:courier" onKeyUp="update()">
 {
   "version": 2,
