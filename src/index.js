@@ -5,7 +5,13 @@ const humanFilter = (filter) => {
   if (!filter) return;
   const getFilterValues = (key) => {
     return Object.keys(filter[key])
-      .map((key2) => `${key}:${key2}:${filter[key][key2]}`)
+      .map(
+        (key2) =>
+          `${key}:${key2}:${JSON.stringify(filter[key][key2], null, "").replace(
+            /"/g,
+            ""
+          )}`
+      )
       .join("\n");
   };
   return Object.keys(filter).map(getFilterValues).join("\n");
