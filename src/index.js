@@ -52,7 +52,9 @@ const getFieldPermission = (permissions, role, field) => {
   if (!permissions) return null;
   const rolePermissions = permissions.find((perm) => perm.role === role);
   const allowed =
-    rolePermissions && rolePermissions.permission.columns.includes(field);
+    rolePermissions &&
+    rolePermissions.permission.columns &&
+    rolePermissions.permission.columns.includes(field);
   const filter =
     allowed &&
     humanFilter(
