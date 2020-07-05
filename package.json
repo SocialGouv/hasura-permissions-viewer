@@ -8,7 +8,7 @@
     "src"
   ],
   "devDependencies": {
-    "@socialgouv/eslint-config-recommended": "0.20.0",
+    "@socialgouv/eslint-config-recommended": "1.7.0",
     "eslint": "6.8.0",
     "jest-cli": "26.0.1",
     "prettier": "2.0.5"
