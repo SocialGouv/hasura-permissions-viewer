@@ -1,5 +1,5 @@
 {
   "extends": [
-    "@socialgouv/renovate-config:light"
+    "socialgouv/renovate-config:light"
   ]
 }
