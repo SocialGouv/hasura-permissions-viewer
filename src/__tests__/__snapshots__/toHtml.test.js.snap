@@ -2,7 +2,7 @@
 
 exports[`Should convert permissions to HTML 1`] = `
 "
-    <table class=\\"table table-stripped\\">
+    <table class=\\"table table-striped\\">
       <thead class=\\"thead-dark\\">
         <tr>
           <th class=\\"thead-dark\\" colspan=\\"2\\">
@@ -28,9 +28,10 @@ exports[`Should convert permissions to HTML 1`] = `
             <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
           </tr>
       </tbody>
+      
     </table>
 
-    <table class=\\"table table-stripped\\">
+    <table class=\\"table table-striped\\">
       <thead class=\\"thead-dark\\">
         <tr>
           <th class=\\"thead-dark\\" colspan=\\"3\\">
@@ -75,6 +76,19 @@ exports[`Should convert permissions to HTML 1`] = `
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
           </tr>
+      </tbody>
+      <thead class=\\"thead-dark\\">
+        <tr>
+          <th scope=\\"col\\">Filters</th>
+          <th class=\\"text-center\\" scope=\\"col\\">anonymous</th>
+<th class=\\"text-center\\" scope=\\"col\\">user1</th>
+        </tr>
+      </thead>
+       <tbody>
+       <tr><td>Read</td>
+         <td class=\\"text-center\\" key={role}>statut:_eq:Public</td>
+<td class=\\"text-center\\" key={role}></td>
+         </tr>
       </tbody>
     </table>"
 `;
