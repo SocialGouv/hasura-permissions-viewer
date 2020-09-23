@@ -40,16 +40,16 @@ const getTableFields = ({
 }) =>
   uniq([
     ...((insert_permissions &&
-      insert_permissions.flatMap((perm) => perm.permission.columns)) ||
+      insert_permissions.flatMap((perm) => perm.permission.columns || [])) ||
       []),
     ...((select_permissions &&
-      select_permissions.flatMap((perm) => perm.permission.columns)) ||
+      select_permissions.flatMap((perm) => perm.permission.columns || [])) ||
       []),
     ...((update_permissions &&
-      update_permissions.flatMap((perm) => perm.permission.columns)) ||
+      update_permissions.flatMap((perm) => perm.permission.columns || [])) ||
       []),
     ...((delete_permissions &&
-      delete_permissions.flatMap((perm) => perm.permission.columns)) ||
+      delete_permissions.flatMap((perm) => perm.permission.columns || [])) ||
       []),
   ]).sort();
 
