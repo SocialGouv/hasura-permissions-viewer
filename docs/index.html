@@ -1,12 +1,6 @@
 <title>Hasura permissions viewer demo</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://unpkg.com/@socialgouv/hasura-permissions-viewer/src/index.js"></script>
-<script>
-  function update() {
-    console.log('io')
-    document.getElementById("result").innerHTML = toHtml(JSON.parse(document.getElementById("source").value))
-  }
-</script>
+<script src="https://unpkg.com/@socialgouv/hasura-permissions-viewer"></script>
 <body>
   <div class="container">
     <div class="jumbotron">
@@ -16,87 +10,71 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="text-center">hasura permissions as JSON (<a href="https://transform.tools/yaml-to-json" target="_blank">YAML->JSON</a>)</div>
-        <textarea id="source" style="width:100%;height:800px;white-space:pre-wrap;font-size:10px;font-family:courier" onKeyUp="update()">
-{
-  "version": 2,
-  "tables": [
-    {
-      "table": {
-        "schema": "public",
-        "name": "table1"
-      },
-      "select_permissions": [
-        {
-          "role": "user1",
-          "permission": {
-            "columns": ["id", "title", "description"],
-            "filter": {}
-          }
-        }
-      ]
-    },
-    {
-      "table": {
-        "schema": "public",
-        "name": "table2"
-      },
-      "insert_permissions": [
-        {
-          "role": "user1",
-          "permission": {
-            "check": {},
-            "columns": ["id", "title", "statut", "url"]
-          }
-        }
-      ],
-      "select_permissions": [
-        {
-          "role": "anonymous",
-          "permission": {
-            "columns": ["id", "title", "statut"],
-            "filter": {
-              "statut": {
-                "_eq": "Public"
-              }
-            }
-          }
-        },
-        {
-          "role": "user1",
-          "permission": {
-            "columns": ["id", "title", "statut", "url"]
-          }
-        }
-      ],
-      "update_permissions": [
-        {
-          "role": "user1",
-          "permission": {
-            "columns": ["id", "title", "url"],
-            "filter": {}
-          }
-        },
-        {
-          "role": "anonymous",
-          "permission": {
-            "columns": [],
-            "filter": {}
-          }
-        }
-      ],
-      "delete_permissions": [
-        {
-          "role": "user1",
-          "permission": {
-            "columns": ["id", "title", "url"],
-            "filter": {}
-          }
-        }
-      ]
-    }
-  ]
-}
+        <div class="text-center">hasura metadata extract</div>
+        <textarea id="source" style="width:100%;height:800px;white-space:pre-wrap;font-size:10px;font-family:courier" >
+version: 2
+tables:
+  - table:
+      schema: public
+      name: table1
+    select_permissions:
+      - role: user1
+        permission:
+          columns:
+            - id
+            - title
+            - description
+          filter: {}
+  - table:
+      schema: public
+      name: table2
+    insert_permissions:
+      - role: user1
+        permission:
+          check: {}
+          columns:
+            - id
+            - title
+            - statut
+            - url
+    select_permissions:
+      - role: anonymous
+        permission:
+          columns:
+            - id
+            - title
+            - statut
+          filter:
+            statut:
+              _eq: Public
+      - role: user1
+        permission:
+          columns:
+            - id
+            - title
+            - statut
+            - url
+    update_permissions:
+      - role: user1
+        permission:
+          columns:
+            - id
+            - title
+            - url
+          filter: {}
+      - role: anonymous
+        permission:
+          columns: []
+          filter: {}
+    delete_permissions:
+      - role: user1
+        permission:
+          columns:
+            - id
+            - title
+            - url
+          filter: {}
+
         </textarea>
       </div>
       <div class="col">
@@ -106,6 +84,22 @@
     </div>
   </div>
 </body>
-<script>
-  update()
+<script type="module">
+  import {YAML} from "https://unpkg.com/yaml@1.10.0/browser/dist";
+
+  function update() {
+    console.log("update...")
+    try {
+      const html = toHtml(YAML.parse(document.getElementById("source").value));
+      document.getElementById("result").innerHTML = html
+    } catch(e) {
+      console.log("e", e)
+      document.getElementById("result").innerHTML = "<div style='text-align:center;margin-top:50px'>Cannot convert YAML :/</div>";
+    }
+
+  }
+
+  document.getElementById("source").addEventListener("keyup", () => { update() })
+
+  update();
 </script>

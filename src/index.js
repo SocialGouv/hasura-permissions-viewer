@@ -173,4 +173,4 @@ const toHtml = (permissions) => {
   return html;
 };
 
-module.exports = toHtml;
+if (typeof module !== "undefined") module.exports = toHtml;
