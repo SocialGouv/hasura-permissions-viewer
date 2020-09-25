@@ -80,11 +80,9 @@ tables:
       </div>
       <div class="col ">
         <div class="text-center h4">HTML result
-
-
-        <a href="" id="exportDataButton" download="export.html" class="btn btn-outline-primary btn-sm" onClick="exportData()">Export</a>
-</div>
-         <div id="result"><div>
+          <a href="" id="exportDataButton" download="export.html" style="margin-left:5px" class="btn btn-outline-primary btn-sm" onClick="exportData()">Export</a>
+        </div>
+        <div id="result"><div>
       </div>
     </div>
   </div>
@@ -112,21 +110,20 @@ tables:
   function exportData() {
     const now = (new Date().toISOString()).substring(0, 10)
     const html = `
-<title>Hasura permissions export</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<br/>
-<div class="container">
-<h2>Export ${now}</h2>
-<br/><br/>
-${document.getElementById("result").innerHTML}
-</div>
-`
+      <title>Hasura permissions export</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <br/>
+      <div class="container">
+        <h2>Export ${now}</h2>
+        <br/><br/>
+        ${document.getElementById("result").innerHTML}
+      </div>`
 
-const data = new Blob([html], {type: 'text/html'});
+    const data = new Blob([html], {type: 'text/html'});
 
-const url = window.URL.createObjectURL(data);
+    const url = window.URL.createObjectURL(data);
 
-document.getElementById('exportDataButton').href = url;
+    document.getElementById('exportDataButton').href = url;
 
   }
 </script>

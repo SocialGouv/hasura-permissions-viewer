@@ -154,11 +154,11 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
   ).length;
 
   return `
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin-bottom:50px">
       <thead class="thead-dark">
         <tr>
           <th class="thead-dark" colspan="${roles.length + 1}">
-            <h3>${table.name}</h3>
+            <h3>table ${table.name}</h3>
           </th>
         </tr>
         <tr>
