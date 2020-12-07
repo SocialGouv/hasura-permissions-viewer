@@ -177,7 +177,7 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
             ${roles
               .map(
                 (role) =>
-                  `<td class="text-center" key={role}>${getHtmlRolePermissions(
+                  `<td class="text-center" key="${role}">${getHtmlRolePermissions(
                     permissions,
                     role,
                     field
@@ -211,7 +211,7 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
          ${roles
            .map(
              (role) =>
-               `<td class="text-center" key={role}>${humanFilter(
+               `<td class="text-center" key="${role}">${humanFilter(
                  getRoleFilters(permissions, role, operation),
                  "<br/>"
                )}</td>`
