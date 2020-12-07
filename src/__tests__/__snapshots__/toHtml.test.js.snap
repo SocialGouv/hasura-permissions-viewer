@@ -17,15 +17,15 @@ exports[`Should convert permissions to HTML 1`] = `
       <tbody>
         <tr>
             <td>description</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
           </tr>
 <tr>
             <td>id</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
           </tr>
 <tr>
             <td>title</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
+            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
           </tr>
       </tbody>
       
@@ -47,31 +47,31 @@ exports[`Should convert permissions to HTML 1`] = `
       <tbody>
         <tr>
             <td>id</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
           </tr>
 <tr>
             <td>statut</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
           </tr>
 <tr>
             <td>title</td>
-            <td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
+<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
           </tr>
 <tr>
             <td>url</td>
-            <td class=\\"text-center\\" key={role}></td>
-<td class=\\"text-center\\" key={role}><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
+            <td class=\\"text-center\\" key=\\"anonymous\\"></td>
+<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
 <span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
@@ -86,8 +86,8 @@ exports[`Should convert permissions to HTML 1`] = `
       </thead>
        <tbody>
        <tr><td>Read</td>
-         <td class=\\"text-center\\" key={role}>statut:_eq:Public</td>
-<td class=\\"text-center\\" key={role}></td>
+         <td class=\\"text-center\\" key=\\"anonymous\\">statut:_eq:Public</td>
+<td class=\\"text-center\\" key=\\"user1\\"></td>
          </tr>
       </tbody>
     </table>"
