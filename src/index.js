@@ -17,6 +17,13 @@ const humanFilter = (filter, separator = "\n") => {
   return Object.keys(filter).map(getFilterValues).join(separator);
 };
 
+const humanSet = (set, separator = "\n") => {
+  if (!set) return "";
+  return Object.keys(set)
+    .map((key) => `${key}=${set[key]}`)
+    .join(separator);
+};
+
 // get all defined roles in some table
 const getTableRoles = ({
   insert_permissions = [],
@@ -112,7 +119,7 @@ const getHtmlRolePermissions = (permissions, role, field) => {
       (operation) =>
         `<span style="cursor: pointer; color: ${
           rolePermissions[operation].filter ? "red" : "auto"
-        }" title="${
+        }; -webkit-text-stroke: 1px #666;" title="${
           rolePermissions[operation].filter || ""
         }">${operation}</span>`
     )
@@ -139,18 +146,47 @@ const getRoleFilters = (permissions, role, operation) => {
   return filters;
 };
 
+const getRoleSets = (permissions, role, operation) => {
+  const perms = {
+    Create: permissions.insert_permissions,
+    Read: permissions.select_permissions,
+    Update: permissions.update_permissions,
+    Delete: permissions.delete_permissions,
+  };
+
+  const rolePermissions =
+    perms[operation] && perms[operation].find((perm) => perm.role === role);
+  const sets =
+    rolePermissions &&
+    rolePermissions.permission &&
+    rolePermissions.permission.set;
+  if (sets && Object.keys(sets).length === 0) {
+    return null;
+  }
+  return sets;
+};
+
 const getTablePermissionsHtml = ({ table, ...permissions }) => {
   const roles = getTableRoles(permissions);
   const fields = getTableFields(permissions);
   const operations = ["Create", "Read", "Update", "Delete"];
   const operationsFilters = operations.map((operation) => ({
     operation,
-    roles: roles
+    filters: roles
       .map((role) => getRoleFilters(permissions, role, operation))
       .filter(Boolean),
   }));
+  const operationsSets = operations.map((operation) => ({
+    operation,
+    sets: roles
+      .map((role) => getRoleSets(permissions, role, operation))
+      .filter(Boolean),
+  }));
   const hasOperationFilters = operationsFilters.filter(
-    (f) => f.roles.filter(Boolean).length
+    (f) => f.filters.filter(Boolean).length
+  ).length;
+  const hasOperationSets = operationsSets.filter(
+    (f) => f.sets.filter(Boolean).length
   ).length;
 
   return `
@@ -175,14 +211,16 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
               `<tr>
             <td>${field}</td>
             ${roles
-              .map(
-                (role) =>
-                  `<td class="text-center" key="${role}">${getHtmlRolePermissions(
-                    permissions,
-                    role,
-                    field
-                  )}</td>`
-              )
+              .map((role) => {
+                const hasPermissions = getHtmlRolePermissions(
+                  permissions,
+                  role,
+                  field
+                );
+                return `<td class="text-center ${
+                  role === "anonymous" && hasPermissions ? "bg-danger-soft" : ""
+                }" key="${role}">${hasPermissions}</td>`;
+              })
               .join("\n")}
           </tr>`
           )
@@ -209,13 +247,15 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
          .map(
            (operation) => `<tr><td>${operation}</td>
          ${roles
-           .map(
-             (role) =>
-               `<td class="text-center" key="${role}">${humanFilter(
-                 getRoleFilters(permissions, role, operation),
-                 "<br/>"
-               )}</td>`
-           )
+           .map((role) => {
+             const hasFilters = humanFilter(
+               getRoleFilters(permissions, role, operation),
+               "<br/>"
+             );
+             return `<td class="text-center ${
+               role === "anonymous" && hasFilters ? "bg-danger-soft" : ""
+             }" key="${role}">${hasFilters}</td>`;
+           })
            .join("\n")}
          </tr>`
          )
@@ -223,19 +263,63 @@ const getTablePermissionsHtml = ({ table, ...permissions }) => {
       </tbody>`
           : ""
       }
+       ${
+         hasOperationSets
+           ? `<thead class="thead-dark">
+        <tr>
+          <th scope="col">Sets</th>
+          ${roles
+            .map((role) => `<th class="text-center" scope="col">${role}</th>`)
+            .join("\n")}
+        </tr>
+      </thead>
+       <tbody>
+       ${operations
+         .filter(
+           (operation) =>
+             roles
+               .map((role) => getRoleSets(permissions, role, operation))
+               .filter(Boolean).length
+         )
+         .map(
+           (operation) => `<tr><td>${operation}</td>
+         ${roles
+           .map((role) => {
+             const hasSets = humanSet(
+               getRoleSets(permissions, role, operation),
+               "<br/>"
+             );
+             return `<td class="text-center ${
+               role === "anonymous" && hasSets ? "bg-danger-soft" : ""
+             }" key="${role}">${hasSets}</td>`;
+           })
+           .join("\n")}
+         </tr>`
+         )
+         .join("\n")}
+      </tbody>`
+           : ""
+       }
     </table>`;
 };
 
-const toHtml = (permissions) => {
+const customCSS = `
+<style>.bg-danger-soft {background-color:#f7d4d7}</style>
+`;
+
+const toHtml = (metadata) => {
   const hasPermissions = (table) =>
     table.select_permissions ||
     table.update_permissions ||
     table.insert_permissions ||
     table.delete_permissions;
-  const html = permissions.tables
-    .filter(hasPermissions)
-    .map(getTablePermissionsHtml)
-    .join("\n");
+  const html =
+    customCSS +
+    metadata.metadata.sources
+      .flatMap((source) => source.tables)
+      .filter(hasPermissions)
+      .map(getTablePermissionsHtml)
+      .join("\n");
   return html;
 };
 

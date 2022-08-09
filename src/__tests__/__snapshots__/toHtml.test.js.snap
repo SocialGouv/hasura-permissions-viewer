@@ -1,93 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should convert permissions to HTML 1`] = `
+exports[`Should convert metadata permissions to HTML 1`] = `
 "
-    <table class=\\"table table-striped\\" style=\\"margin-bottom:50px\\">
-      <thead class=\\"thead-dark\\">
-        <tr>
-          <th class=\\"thead-dark\\" colspan=\\"2\\">
-            <h3>table table1</h3>
-          </th>
-        </tr>
-        <tr>
-          <th scope=\\"col\\">Field</th>
-          <th class=\\"text-center\\" scope=\\"col\\">user1</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-            <td>description</td>
-            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
-          </tr>
-<tr>
-            <td>id</td>
-            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
-          </tr>
-<tr>
-            <td>title</td>
-            <td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span></td>
-          </tr>
-      </tbody>
-      
-    </table>
+<style>.bg-danger-soft {background-color:#f7d4d7}</style>
 
     <table class=\\"table table-striped\\" style=\\"margin-bottom:50px\\">
       <thead class=\\"thead-dark\\">
         <tr>
           <th class=\\"thead-dark\\" colspan=\\"3\\">
-            <h3>table table2</h3>
+            <h3>table books</h3>
           </th>
         </tr>
         <tr>
           <th scope=\\"col\\">Field</th>
           <th class=\\"text-center\\" scope=\\"col\\">anonymous</th>
-<th class=\\"text-center\\" scope=\\"col\\">user1</th>
+<th class=\\"text-center\\" scope=\\"col\\">user</th>
         </tr>
       </thead>
       <tbody>
         <tr>
             <td>id</td>
-            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+            <td class=\\"text-center bg-danger-soft\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span></td>
+<td class=\\"text-center \\" key=\\"user\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">U</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">D</span></td>
           </tr>
 <tr>
-            <td>statut</td>
-            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+            <td>name</td>
+            <td class=\\"text-center bg-danger-soft\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span></td>
+<td class=\\"text-center \\" key=\\"user\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">U</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">D</span></td>
           </tr>
 <tr>
-            <td>title</td>
-            <td class=\\"text-center\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: red\\" title=\\"statut:_eq:Public\\">R</span></td>
-<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
-          </tr>
-<tr>
-            <td>url</td>
-            <td class=\\"text-center\\" key=\\"anonymous\\"></td>
-<td class=\\"text-center\\" key=\\"user1\\"><span style=\\"cursor: pointer; color: auto\\" title=\\"\\">C</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">R</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">U</span>
-<span style=\\"cursor: pointer; color: auto\\" title=\\"\\">D</span></td>
+            <td>user_id</td>
+            <td class=\\"text-center bg-danger-soft\\" key=\\"anonymous\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span></td>
+<td class=\\"text-center \\" key=\\"user\\"><span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">C</span>
+<span style=\\"cursor: pointer; color: auto; -webkit-text-stroke: 1px #666;\\" title=\\"\\">R</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">U</span>
+<span style=\\"cursor: pointer; color: red; -webkit-text-stroke: 1px #666;\\" title=\\"user_id:_eq:X-Hasura-User-Id\\">D</span></td>
           </tr>
       </tbody>
       <thead class=\\"thead-dark\\">
         <tr>
           <th scope=\\"col\\">Filters</th>
           <th class=\\"text-center\\" scope=\\"col\\">anonymous</th>
-<th class=\\"text-center\\" scope=\\"col\\">user1</th>
+<th class=\\"text-center\\" scope=\\"col\\">user</th>
         </tr>
       </thead>
        <tbody>
-       <tr><td>Read</td>
-         <td class=\\"text-center\\" key=\\"anonymous\\">statut:_eq:Public</td>
-<td class=\\"text-center\\" key=\\"user1\\"></td>
+       <tr><td>Update</td>
+         <td class=\\"text-center \\" key=\\"anonymous\\"></td>
+<td class=\\"text-center \\" key=\\"user\\">user_id:_eq:X-Hasura-User-Id</td>
+         </tr>
+<tr><td>Delete</td>
+         <td class=\\"text-center \\" key=\\"anonymous\\"></td>
+<td class=\\"text-center \\" key=\\"user\\">user_id:_eq:X-Hasura-User-Id</td>
+         </tr>
+      </tbody>
+       <thead class=\\"thead-dark\\">
+        <tr>
+          <th scope=\\"col\\">Sets</th>
+          <th class=\\"text-center\\" scope=\\"col\\">anonymous</th>
+<th class=\\"text-center\\" scope=\\"col\\">user</th>
+        </tr>
+      </thead>
+       <tbody>
+       <tr><td>Create</td>
+         <td class=\\"text-center \\" key=\\"anonymous\\"></td>
+<td class=\\"text-center \\" key=\\"user\\">user_id=x-hasura-User-id</td>
          </tr>
       </tbody>
     </table>"
