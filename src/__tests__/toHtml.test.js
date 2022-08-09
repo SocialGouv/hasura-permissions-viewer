@@ -1,8 +1,7 @@
 const toHtml = require("..");
 
-const permissions = require("./sample.json");
+const metadata = require("./sample.json");
 
-test("Should convert permissions to HTML", () => {
-  expect(toHtml(permissions)).toMatchSnapshot();
+test("Should convert metadata permissions to HTML", () => {
+  expect(toHtml(metadata)).toMatchSnapshot();
 });
-
