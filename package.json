@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "license": "Apache-2.0",
   "files": [
-    "src"
+    "src",
+    "demo.png"
   ],
   "devDependencies": {
     "@socialgouv/eslint-config-recommended": "1.32.0",
