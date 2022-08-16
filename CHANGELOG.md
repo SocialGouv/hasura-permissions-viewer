@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/SocialGouv/hasura-permissions-viewer/compare/v1.2.1...v1.2.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* allow drag n drop from demo ([a42b59b](https://github.com/SocialGouv/hasura-permissions-viewer/commit/a42b59be772cbfb4681c8081054654e90b95bba6))
+
 ## [1.2.1](https://github.com/SocialGouv/hasura-permissions-viewer/compare/v1.2.0...v1.2.1) (2022-08-09)
 
 
