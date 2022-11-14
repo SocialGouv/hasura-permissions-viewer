@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/SocialGouv/hasura-permissions-viewer/compare/v1.2.2...v1.2.3) (2022-11-14)
+
+
+### Bug Fixes
+
+* dummy ([7e0324b](https://github.com/SocialGouv/hasura-permissions-viewer/commit/7e0324b8acfe1999c439e04db5aa57d08773c843))
+
 ## [1.2.2](https://github.com/SocialGouv/hasura-permissions-viewer/compare/v1.2.1...v1.2.2) (2022-08-16)
 
 
