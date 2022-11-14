@@ -18,3 +18,4 @@ const metadata = require("./metadata.json");
 // to get the formatted HTML tables
 console.log(toHtml(metadata));
 ```
+
